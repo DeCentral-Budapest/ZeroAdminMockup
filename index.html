@@ -6,45 +6,63 @@
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style type="text/css">
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
 .collection a.collection-item { color: #3f51b5; /* indigo */ }
 .collection .collection-item.active { background-color: #7986cb; /* indigo lighten-2 */ }
+.dropdown-content li > a { color: #3f51b5; /* indigo */ }
+.dropdown-content li.active { background-color: #7986cb; /* indigo lighten-2 */ }
+.dropdown-content li.active > a { color: #eafaf9; /* copied from collection-item.active color */ }
     </style>
   </head>
   <body>
-    <div class="navbar-fixed">
-      <nav class="indigo lighten-2" role="navigation">
-        <div class="navbar-wrapper container">
-          <a href="#" class="brand-logo" id="logo-container">ZeroAdmin</a>          
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#" class="waves-effect">ZeroBlog</a></li>
-          </ul>
-          <ul id="nav-mobile" class="side-nav">
-            <li><a href="#" class="waves-effect">Navbar Link</a></li>
-          </ul>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
-    </div>
-
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div class="col s6 m4 l2">
-            <ul class="collection with-header">
-              <li class="collection-header"><h4>Entities</h4></li>
-              <a href="#" class="collection-item active">Comment</a>
-              <a href="#" class="collection-item">Post</a>
-              <a href="#" class="collection-item">Vote</a>
-              <li class="collection-header"><h4>General</h4></li>
-              <a href="#" class="collection-item">Permission Rules</a>
-              <a href="#" class="collection-item">Permissions</a>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="indigo lighten-2" role="navigation">
+          <div class="navbar-wrapper container">
+            <a href="#" class="breadcrumb">ZeroAdmin</a>
+            <ul id="sites-dropdown" class="dropdown-content">
+              <li><a href="#!">ZeroMe</a></li>
+              <li class="active"><a href="#!">ZeroBlog</a></li>
+              <li><a href="#!">ZeroTalk</a></li>
+              <li><a href="#!">ZeroMail</a></li>
             </ul>
+            <a href="#" class="breadcrumb dropdown-button" data-activates="sites-dropdown"><i class="mdi-navigation-arrow-drop-down right"></i>ZeroBlog</a>
+
+            <a href="#" class="btn waves-effect right" title="Add new site"><i class="material-icons">add</i></a>
           </div>
-          <div class="col s6 m8 l10">
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="section">
+          <div class="row">
+            <div class="col s6 m4 l2">
+              <ul class="collection with-header">
+                <li class="collection-header"><h4>Entities</h4></li>
+                <a href="#" class="collection-item active">Comment</a>
+                <a href="#" class="collection-item">Post</a>
+                <a href="#" class="collection-item">Vote</a>
+                <li class="collection-header"><h4>General</h4></li>
+                <a href="#" class="collection-item">Permission Rules</a>
+                <a href="#" class="collection-item">Permissions</a>
+              </ul>
+            </div>
+            <div class="col s6 m8 l10">
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer class="page-footer indigo lighten-2">
       <div class="container">
