@@ -27,16 +27,13 @@ main {
       <div class="navbar-fixed">
         <nav class="indigo lighten-2" role="navigation">
           <div class="navbar-wrapper container">
-            <a href="#" class="breadcrumb">ZeroAdmin</a>
+            <a href="#" class="brand-logo">ZeroAdmin</a>
             <ul id="sites-dropdown" class="dropdown-content">
               <li><a href="#!">ZeroMe</a></li>
               <li class="active"><a href="#!">ZeroBlog</a></li>
               <li><a href="#!">ZeroTalk</a></li>
               <li><a href="#!">ZeroMail</a></li>
             </ul>
-            <a href="#" class="breadcrumb dropdown-button" data-activates="sites-dropdown"><i class="mdi-navigation-arrow-drop-down right"></i>ZeroBlog</a>
-
-            <a href="#" class="btn waves-effect right" title="Add new site"><i class="material-icons">add</i></a>
           </div>
         </nav>
       </div>
@@ -46,18 +43,67 @@ main {
       <div class="container">
         <div class="section">
           <div class="row">
-            <div class="col s6 m4 l2">
-              <ul class="collection with-header">
-                <li class="collection-header"><h4>Entities</h4></li>
-                <a href="#" class="collection-item active">Comment</a>
-                <a href="#" class="collection-item">Post</a>
-                <a href="#" class="collection-item">Vote</a>
-                <li class="collection-header"><h4>General</h4></li>
-                <a href="#" class="collection-item">Permission Rules</a>
-                <a href="#" class="collection-item">Permissions</a>
-              </ul>
+            <div class="col s12 m6 l4">
+              <div class="card hoverable">
+                <div class="card-content">
+                  <span class="card-title">ZeroMe</span>
+                  <p>Social site that merges the profiles of your friends.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Edit</a>
+                  <a href="#">Dismiss</a>
+                </div>
+              </div>
             </div>
-            <div class="col s6 m8 l10">
+            <div class="col s12 m6 l4">
+              <div class="card hoverable">
+                <div class="card-content">
+                  <span class="card-title">ZeroBlog</span>
+                  <p>An easy platform for posting, commenting and voting.</p>
+                </div>
+                <div class="card-action">
+                  <a href="zeroblog.html">Edit</a>
+                  <a href="#">Dismiss</a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l4">
+              <div class="card hoverable">
+                <div class="card-content">
+                  <span class="card-title">ZeroTalk</span>
+                  <p>A great forum for great people.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Edit</a>
+                  <a href="#">Dismiss</a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l4">
+              <div class="card hoverable">
+                <div class="card-content">
+                  <span class="card-title">ZeroMail</span>
+                  <p>Nobody can read your mails but the recipients.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Edit</a>
+                  <a href="#">Dismiss</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--div class="row">
+            <div class="col s12 m12 l12">
+                <a class="btn-floating btn-large red right">
+                  <i class="large material-icons">add</i>
+                </a>
+            </div>
+          </div-->
+          <div class="container">
+            <div class="fixed-action-btn">
+              <a class="btn-floating btn-large waves-effect orange right tooltipped" data-position="top" data-tooltip="Add another site">
+                <i class="large material-icons">add</i>
+              </a>
             </div>
           </div>
         </div>
@@ -87,7 +133,8 @@ main {
     <script type="text/javascript">
       function dom_ready () {
         jQuery('.button-collapse').sideNav();
-        jQuery('.parallax').parallax();
+        //jQuery('.parallax').parallax();
+        //jQuery('.tooltipped').tooltip();
       }
       jQuery(dom_ready());
     </script>
