@@ -15,6 +15,7 @@ body {
 main {
   flex: 1 0 auto;
 }
+
 .collection a.collection-item { color: #3f51b5; /* indigo */ }
 .collection .collection-item.active { background-color: #7986cb; /* indigo lighten-2 */ }
 .dropdown-content li > a { color: #3f51b5; /* indigo */ }
@@ -55,18 +56,21 @@ main {
       <div class="container">
         <div class="section">
           <div class="row">
-            <div class="col s6 m6 l4">
-              <ul class="collection with-header">
-                <li class="collection-header"><h4>Entities</h4></li>
+            <div class="col s12 m6 l4">
+              <h4>Entities</h4>
+              <ul class="collection">
                 <a href="#" class="collection-item active">Comment</a>
                 <a href="#" class="collection-item">Post</a>
                 <a href="#" class="collection-item">Vote</a>
-                <li class="collection-header"><h4>General</h4></li>
+              </ul>
+              <h4>General</h4>
+              <ul class="collection">
                 <a href="#" class="collection-item">Permission Rules</a>
                 <a href="#" class="collection-item">Permissions</a>
               </ul>
             </div>
-            <div class="col s6 m6 l4">
+            <div class="col s12 m6 l4">
+              <h4>Parent post</h4>
               <ul id="posts-dropdown" class="dropdown-content">
 <li><a href="#">Upcoming feature: Merger sites<span class="badge">7</span></a></li>
 <li class="active"><a href="#">Why do we need to change the Web?<span class="badge">14</span></a></li>
@@ -117,8 +121,8 @@ main {
 <li><a href="#">How to have a blog like this<span class="badge">99</span></a></li>
               </ul>
               <a href="#" class="dropdown-button btn-large" data-activates="posts-dropdown"><i class="material-icons right">arrow_drop_down</i>Why do we need to change the Web?</a>
-              <ul class="collection with-header">
-                <li class="collection-header"><h4>14 comments</h4></li>
+              <h4>14 comments</h4>
+              <ul class="collection">
 <a href="#" class="collection-item">2016-06-27 14:04:13, crx@zeroid.bit</a>
 <a href="#" class="collection-item">2016-06-26 07:48:32, cannonfodder@zeroid.bit</a>                
 <a href="#" class="collection-item">2016-06-23 06:06:45, amaropargo@zeroid.bit</a>
