@@ -3,7 +3,7 @@
   <head>
     <title>ZeroAdmin | ZeroBlog</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style type="text/css">
 body {
@@ -141,23 +141,36 @@ main {
 <a href="#" class="collection-item">2016-06-15 04:53:49, evbogue@zeroid.bit</a>
               </ul>
             </div>
-            <div class="col s12 m12 l4">
-            <blockquote>
-<p><a href="#comment_1_1BMrYxwpX4TkivMHPYSAMGcBBr66soRxT4">evbogue</a>: So I looked up zeronet, I got it installed, and was amazed at how quickly it all got working. Good work, sir!</p>
-</blockquote>
-<p>I'm glad it worked for you, I'm still looking for better solution for mac machines (without the signiture warning), I would be thankful if anyone would able to help me on it. <a href="https://github.com/HelloZeroNet/ZeroNet/issues/363">Gtihub issue</a></p>
-<blockquote>
-<p><a href="#comment_52_13Z7XxTa7JuFat3KzzMWu3onwM6biLuurJ">p2p</a>: what are ur ideas/plans about ZeroNet's mobile usage in the future?</p>
-</blockquote>
-<p>The easiest solution is creating a out own browser clone that holds the private key and browse the content using proxies. But this means slower user experience and no offline browsing which would be really good on mobile. </p>
-<p>So later we could add light mobile client that includes the normal ZeroNet client with some modifications: Probably these clients would prefer smaller amount of good connections and would not re-distribute the received updates to other peers. Or maybe we could use the push notifications to send the updates to a site, but this need more research.</p>
-<p>So I think it's definitely possible to create a mobile zeronet client, but it's need lots of research and testing to see how many modifications we need.</p>
-            </div>
+            <form class="col s12 m12 l4">
+              <label for="input-author">Author</label>
+              <input id="input-author" type="text" disabled="yes" name="author" value="nofish@zeroid.bit">
+              <label for="input-author-id">Comment id of author</label>
+              <input id="input-author-comment" type="number" disabled="yes" min="0" step="1" name="author-comment" value="105">
+              <label for="input-author">Commented at</label>
+              <input id="input-date-added" type="datetime-local" name="date-added" value="2016-06-15 13:48:47">
+              <div class="row">
+              <div class="input-field col s12">
+                <label for="input-body">Comment body</label>
+                <textarea id="input-body" name="body" class="materialize-textarea" autofocus="true" oninput="enable('input_save')">
+> [evbogue](#comment_1_1BMrYxwpX4TkivMHPYSAMGcBBr66soRxT4): So I looked up zeronet, I got it installed, and was amazed at how quickly it all got working. Good work, sir!
+
+I'm glad it worked for you, I'm still looking for better solution for mac machines (without the signiture warning), I would be thankful if anyone would able to help me on it. [Gtihub issue](https://github.com/HelloZeroNet/ZeroNet/issues/363)
+
+> [p2p](#comment_52_13Z7XxTa7JuFat3KzzMWu3onwM6biLuurJ): what are ur ideas/plans about ZeroNet's mobile usage in the future?
+
+The easiest solution is creating a out own browser clone that holds the private key and browse the content using proxies. But this means slower user experience and no offline browsing which would be really good on mobile. 
+
+So later we could add light mobile client that includes the normal ZeroNet client with some modifications: Probably these clients would prefer smaller amount of good connections and would not re-distribute the received updates to other peers. Or maybe we could use the push notifications to send the updates to a site, but this need more research.
+
+So I think it's definitely possible to create a mobile zeronet client, but it's need lots of research and testing to see how many modifications we need.
+                </textarea>
+              </div></div>
+            </form>
           </div>
         </div>
         <div class="fixed-action-btn">
-           <a class="btn-floating btn-large waves-effect orange right tooltipped" data-position="top" data-tooltip="Edit comment">
-             <i class="large material-icons">mode_edit</i>
+           <a class="btn-floating btn-large waves-effect orange right tooltipped disabled" id="input_save" data-position="top" data-tooltip="Save changes">
+             <i class="large material-icons">save</i>
            </a>
         </div>
       </div>
@@ -184,6 +197,10 @@ main {
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script type="text/javascript">
+      function enable(id) {
+        var element = document.getElementById(id); 
+        element.className = element.className.replace(/ disabled$/, ''); 
+      }
       function dom_ready () {
         jQuery('.button-collapse').sideNav();
         jQuery('.parallax').parallax();
