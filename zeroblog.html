@@ -142,7 +142,21 @@ main {
               </ul>
             </div>
             <form class="col s12 m12 l4">
-              <h4>Edit comment</h4>
+              <div class="row">
+                <h4 class="col s12">Edit comment
+                  <a href="#modal-delete" class="btn-flat right tooltipped modal-trigger" data-tooltip="Delete comment"><i class="material-icons">delete</i></a>
+                </h4>
+                <div id="modal-delete" class="modal">
+                  <div class="modal-content">
+                    <h4>Delete comment</h4>
+                    <p>Are you really sure? Deletion cannot be undone!</p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Delete</a>
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                  </div>
+                </div>
+              </div>
               <div class="row"><div class="input-field col s12">
                 <select id="input-parent" name="parent_post">
                   <option value="">Upcoming feature: Merger sites</option>
@@ -263,6 +277,7 @@ So I think it's definitely possible to create a mobile zeronet client, but it's 
         jQuery('.button-collapse').sideNav();
         jQuery('.parallax').parallax();
         jQuery('select').not('.disabled').material_select();
+        jQuery('.modal-trigger').leanModal();
       }
       jQuery(dom_ready());
     </script>
