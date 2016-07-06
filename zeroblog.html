@@ -142,15 +142,72 @@ main {
               </ul>
             </div>
             <form class="col s12 m12 l4">
-              <label for="input-author">Author</label>
-              <input id="input-author" type="text" disabled="yes" name="author" value="nofish@zeroid.bit">
-              <label for="input-author-id">Comment id of author</label>
-              <input id="input-author-comment" type="number" disabled="yes" min="0" step="1" name="author-comment" value="105">
-              <label for="input-author">Commented at</label>
-              <input id="input-date-added" type="datetime-local" name="date-added" value="2016-06-15 13:48:47">
-              <div class="row">
-              <div class="input-field col s12">
-                <label for="input-body">Comment body</label>
+              <h4>Edit comment</h4>
+              <div class="row"><div class="input-field col s12">
+                <select id="input-parent" name="parent_post">
+                  <option value="">Upcoming feature: Merger sites</option>
+                  <option value="" selected="yes">Why do we need to change the Web?</option>
+                  <option value="">ZeroMe: Status report</option>
+                  <option value="">ZeroNet talk @ Decentralized Web Summit</option>
+                  <option value="">Changelog, May 6, 2016</option>
+                  <option value="">Changelog, April 27, 2016</option>
+                  <option value="">Changelog, April 18, 2016</option>
+                  <option value="">Changelog, April 11, 2016</option>
+                  <option value="">Changelog, March 30, 2016</option>
+                  <option value="">Changelog, March 23, 2016</option>
+                  <option value="">Changelog, March 15, 2016</option>
+                  <option value="">Changelog, March 9, 2016</option>
+                  <option value="">Changelog, February 28, 2016</option>
+                  <option value="">Changelog, February 24, 2016</option>
+                  <option value="">Changelog, February 9, 2016</option>
+                  <option value="">Changelog, February 2, 2016</option>
+                  <option value="">The first year of ZeroNet</option>
+                  <option value="">Changelog, January 13, 2016</option>
+                  <option value="">Changelog, January 5, 2016</option>
+                  <option value="">Changelog, December 23, 2015</option>
+                  <option value="">Changelog, December 14, 2015</option>
+                  <option value="">Changelog, December 10, 2015</option>
+                  <option value="">Status report: ZeroMail</option>
+                  <option value="">Changelog, November 19, 2015</option>
+                  <option value="">Changelog, November 9, 2015</option>
+                  <option value="">Changelog, November 6, 2015</option>
+                  <option value="">Changelog, October 30, 2015</option>
+                  <option value="">Changelog, October 22, 2015</option>
+                  <option value="">Changelog, October 11, 2015</option>
+                  <option value="">New ZeroNet logo concept</option>
+                  <option value="">Changelog, September 16, 2015</option>
+                  <option value="">Changelog, September 11, 2015</option>
+                  <option value="">Changelog, September 8, 2015</option>
+                  <option value="">Changelog, August 30, 2015</option>
+                  <option value="">Changelog, August 16, 2015</option>
+                  <option value="">Changelog, July 25, 2015</option>
+                  <option value="">ZeroNet site development tutorial #2</option>
+                  <option value="">ZeroNet site development tutorial #1</option>
+                  <option value="">Changelog: June 10, 2015</option>
+                  <option value="">Changelog: May 31, 2015</option>
+                  <option value="">Trusted authorization providers</option>
+                  <option value="">Changelog: May 25, 2015</option>
+                  <option value="">Status report: Trusted authorization providers</option>
+                  <option value="">Slides about ZeroNet</option>
+                  <option value="">Changelog: Apr 24, 2015</option>
+                  <option value="">Changelog: Apr 20, 2015</option>
+                  <option value="">How to have a blog like this</option>
+                </select>
+                <label for="input-parent">Parent post</label>
+              </div></div>
+              <div class="row"><div class="input-field col s12">
+                <input id="input-author" type="text" disabled="yes" name="author" value="nofish@zeroid.bit">
+                <label for="input-author">Author</label>
+              </div></div>
+              <div class="row"><div class="input-field col s12">
+                <input id="input-author-comment" type="number" disabled="yes" min="0" step="1" name="author-comment" value="105">
+                <label for="input-author-id">Comment id of author</label>
+              </div></div>
+              <div class="row"><div class="input-field col s12">
+                <input id="input-date-added" type="text" name="date-added" value="2016-06-15 13:48:47">
+                <label for="input-author">Commented at</label>
+              </div></div>
+              <div class="row"><div class="input-field col s12">
                 <textarea id="input-body" name="body" class="materialize-textarea" autofocus="true" oninput="enable('input_save')">
 > [evbogue](#comment_1_1BMrYxwpX4TkivMHPYSAMGcBBr66soRxT4): So I looked up zeronet, I got it installed, and was amazed at how quickly it all got working. Good work, sir!
 
@@ -164,6 +221,7 @@ So later we could add light mobile client that includes the normal ZeroNet clien
 
 So I think it's definitely possible to create a mobile zeronet client, but it's need lots of research and testing to see how many modifications we need.
                 </textarea>
+                <label for="input-body">Comment body</label>
               </div></div>
             </form>
           </div>
@@ -204,6 +262,7 @@ So I think it's definitely possible to create a mobile zeronet client, but it's 
       function dom_ready () {
         jQuery('.button-collapse').sideNav();
         jQuery('.parallax').parallax();
+        jQuery('select').not('.disabled').material_select();
       }
       jQuery(dom_ready());
     </script>
